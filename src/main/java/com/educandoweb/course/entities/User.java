@@ -3,9 +3,25 @@ package com.educandoweb.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+
+//Preciso colocar notações "@" para indicar ao JPA como ele deve interpretar as informações
+
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	//Informar para o JPA qual é a chave primaria dentre essas propriedades
+	//@Id é a chave primaria
+	//@Generated é para gerar incremento de numeros de Id automaticamente
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String email;
