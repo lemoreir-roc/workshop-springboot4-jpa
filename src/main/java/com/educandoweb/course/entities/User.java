@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,6 +35,7 @@ public class User implements Serializable {
 	
 	//relação com o order, um usuario pode ter varias orders
 	//Para List criar somente get. Não vai trocar a lista então não se cria set
+	@JsonIgnore //Necessario Jsonignore para não ficar um looping infinito no postman
 	@OneToMany(mappedBy = "client") //Esse client esta na classe Order na linha "private User client"
 	private List<Order> orders = new ArrayList<>();
 	
