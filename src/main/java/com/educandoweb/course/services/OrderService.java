@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.educandoweb.course.entities.Order;
-import com.educandoweb.course.entities.Order;
 import com.educandoweb.course.repositories.OrderRepository;
 
 //2 operações - buscar todos os usuarios e buscar usuario por Id
